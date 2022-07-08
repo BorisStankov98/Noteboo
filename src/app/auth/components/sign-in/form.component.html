@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="form">
+    <h1> Sign in </h1>
+    <form [formGroup]="signInForm">
+      <mat-form-field appearance="fill">
+        <mat-label >Email</mat-label>
+        <input formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput type="password" placeholder="Password">
+      </mat-form-field>
+      <button (click)="handleRegister(signInForm.value)" type="button" mat-raised-button color="primary">Sign in</button>    
+    </form>
+  </div>
+</section>

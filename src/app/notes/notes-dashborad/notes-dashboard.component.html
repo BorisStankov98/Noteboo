@@ -1,0 +1,11 @@
+<section class="section-notes">
+    <div class="container">
+        <div class="notes-content">
+            <app-note
+                *ngFor="let note of notes"
+                [note]="note"
+            >
+            </app-note>
+        </div>
+    </div>
+</section>

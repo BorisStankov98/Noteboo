@@ -1,0 +1,12 @@
+ .section-notes {
+   display: flex;
+   justify-content: center;
+    .container{
+        max-width: 80%;
+    }
+    .notes-content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+ }
+ 

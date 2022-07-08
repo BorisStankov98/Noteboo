@@ -1,14 +1,13 @@
-<form #LoginForm="ngForm"  >
-<input ngModel name="email" type="email" placeholder="email">
-<input ngModel name="password" type="password" placeholder="password">
-<button type="submit"> Create user</button>
-<button type="submit" (click)="addData(LoginForm.value)" >add Data</button>
-</form>
+<mat-toolbar color="primary">
+  <mat-icon>local_fire_department</mat-icon>
+  <span>Noteboo</span>
+  <span class="example-spacer"></span>
+  <nav>
+  <a routerLink="/auth/login">Login</a>
+  <a routerLink="/auth/signin">Signin</a>
+  <a routerLink="/notes/">Notes</a>
+</nav>
+</mat-toolbar>
 
 
-<ul>
-  <li *ngFor="let item of data">
-    {{item | json}}
-    <button> update</button>
-  </li>
-</ul>
+<router-outlet></router-outlet>

@@ -1,0 +1,14 @@
+<form #LoginForm="ngForm"  >
+<input ngModel name="email" type="email" placeholder="email">
+<input ngModel name="password" type="password" placeholder="password">
+<button type="submit"> Create user</button>
+<button type="submit" (click)="addData(LoginForm.value)" >add Data</button>
+</form>
+
+
+<ul>
+  <li *ngFor="let item of data">
+    {{item | json}}
+    <button> update</button>
+  </li>
+</ul>
