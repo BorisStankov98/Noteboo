@@ -8,18 +8,16 @@ import { Notes } from '../../modules/notes-interface'
 })
 export class NotesDashboardComponent implements OnInit {
 
-  notes!:Notes[]
-  test:any
+  notes:any
   constructor(
     public getNotes:GetNotesService
-    ) { 
+    ) {
     }
-    
+
     ngOnInit(){
-    console.log(this.getNotes.data)
     this.getNotes.getData().then((data: {id: string}[]) => {
-      this.test=data;
-      console.log({test:this.test});
+      this.notes=data;
+      console.log(this.notes)
     })
 
   }

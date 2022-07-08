@@ -14,9 +14,8 @@ export class GetNotesService {
     return new Promise((resolve) => {
       const dbInstance = collection(this.firestore, 'Boris.Notes');
       getDocs(dbInstance).then((response) => {
-        console.log(response);
         this.data = response.docs.map((item: QueryDocumentSnapshot<any>) => {
-          return { 
+          return {
             id: item.id,
             title: item.get("title"),
             body: item.get("body")
