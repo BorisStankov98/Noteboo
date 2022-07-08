@@ -25,4 +25,16 @@ export class GetNotesService {
       });
     });
   }
+  note:any
+  getNote(id:string): Promise<{ id: string }[]> {
+    return new Promise((resolve) => {
+      const dbInstance = collection(this.firestore, 'Boris.Notes');
+      getDocs(dbInstance).then((response) => {
+        this.note = response.docs.find((item: QueryDocumentSnapshot<any>) => {
+           return item.id==='eJFrlPkyL8mkhb2ZztVU'
+        });
+        resolve(this.note);
+      });
+    });
+  }
 }

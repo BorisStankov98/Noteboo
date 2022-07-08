@@ -4,20 +4,25 @@
         <p> {{note?.body}}</p>
       </mat-card-content>
       <mat-card-actions>
-    
-        <button 
-        mat-raised-button 
-        color="primary"
+        <button
+        mat-raised-button
         (click)="openDialog()"
+        >
+        View</button>
+
+        <button
+        mat-raised-button
+        color="primary"
         >
         Edit
         </button>
-        
-        <button 
+
+        <button
         mat-raised-button
         color="warn"
+        (click)="deleteNote()"
         >
-        Delete</button>
-        
+        Delete
+        </button>
     </mat-card-actions>
   </mat-card>
