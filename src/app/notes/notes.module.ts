@@ -8,16 +8,17 @@ import {MatButtonModule} from '@angular/material/button';
 import { NoteComponent } from './note/note.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GetNotesService } from '../services/get-notes.service'
+import { AuthService } from '../services/auth.service';
 
 
 const routes:Routes =[
-    { path:'', 
+    { path:'',
     children:[
       {path:'', component:NotesDashboardComponent},
       {path:'1', component:NoteComponent }
     ]
     }
-] 
+]
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ const routes:Routes =[
     RouterModule.forChild(routes),
 
   ],
-  providers: [GetNotesService],
+  providers: [GetNotesService,AuthService],
   exports:[]
 })
 export class NotesModule { }

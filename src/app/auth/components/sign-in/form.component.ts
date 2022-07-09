@@ -12,17 +12,15 @@ export class SignInComponent implements OnInit {
     constructor(
       private auth:Auth,
       private formBuilder:FormBuilder){}
-    
       signInForm = this.formBuilder.group({
       email:[''],
       password:['']
     }
     )
-    
+
   ngOnInit(): void {
     console.log()
   }
-
   handleRegister(value:any){
     createUserWithEmailAndPassword(this.auth, value.email, value.password)
     .then((response:any)=>{

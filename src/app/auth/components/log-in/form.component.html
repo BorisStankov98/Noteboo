@@ -6,12 +6,12 @@
         <mat-label>Email</mat-label>
         <input formControlName="email" matInput placeholder="Email">
       </mat-form-field>
-    
+
       <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
         <input formControlName="password" matInput type="password" placeholder="Password">
       </mat-form-field>
-      <button (click)="submitForm()" type="button" mat-raised-button color="primary">Log in</button>    
+      <button (click)="handleLogIn(logInForm.value)" type="button" mat-raised-button color="primary">Log in</button>
     </form>
   </div>
 </section>
