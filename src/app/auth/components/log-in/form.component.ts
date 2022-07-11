@@ -29,9 +29,9 @@ export class FormComponent implements OnInit {
   handleLogIn(value:any){
       signInWithEmailAndPassword(this.auth, value.email, value.password)
       .then((response:any)=>{
-        this.router.navigate(['notes']);
         this.authService.saveAuthToken(response._tokenResponse.idToken)
-        // this.authService.currentUser(response)
+        this.authService.currentUser(response.user.uid)
+        this.router.navigate(['notes']);
         // console.log(response.user)
 
       })

@@ -18,7 +18,6 @@ export class NotesDashboardComponent implements OnInit {
       this.notes=data;
       console.log(this.notes)
     })
-
   }
 
 }

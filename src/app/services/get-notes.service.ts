@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { collection, getDocs, Firestore, QueryDocumentSnapshot } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { Notes } from '../modules/notes-interface';
+
+import { collection, getDocs, Firestore, QueryDocumentSnapshot, doc,query,where,getDoc} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +8,16 @@ import { Notes } from '../modules/notes-interface';
 export class GetNotesService {
   constructor(public firestore: Firestore) {}
   data: any[] = [];
-
+  // gets the user saved in local storage
+  getUser(){
+    return localStorage.getItem('userUid')
+  }
+  //  asigns the user from localstorage to the user variable
+  user:any = this.getUser()
+  //  creates a query with the user UID to fetch the correct data
   getData(): Promise<{ id: string }[]> {
     return new Promise((resolve) => {
-      const dbInstance = collection(this.firestore, 'Boris.Notes');
+      const dbInstance = collection(this.firestore, this.user);
       getDocs(dbInstance).then((response) => {
         this.data = response.docs.map((item: QueryDocumentSnapshot<any>) => {
           return {

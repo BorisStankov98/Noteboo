@@ -12,5 +12,9 @@ export class AppComponent {
 
   constructor(){}
 
+  signOut(){
+    window.location.reload()
+    localStorage.clear()
+  }
     }
 

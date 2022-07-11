@@ -26,7 +26,8 @@ export class SignInComponent implements OnInit {
   handleRegister(value:any){
     createUserWithEmailAndPassword(this.auth, value.email, value.password)
     .then((response:any)=>{
-      this.router.navigate(['auth/login']);
+      console.log(response.user.uid)
+      // this.router.navigate(['auth/login']);
     })
     .catch((error)=>{
       alert(error)})

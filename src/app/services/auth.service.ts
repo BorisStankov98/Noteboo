@@ -6,17 +6,18 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  user:{} | null = null
 
   constructor() {}
-  currentUser(user:{}){
-    this.user=user
-    console.log(this.user)
-    return this.user
+  // saves the data of the current user
+  currentUser(user:any){
+    localStorage.setItem('userUid',user)
   }
+  //saves the auth token
   saveAuthToken(token:string){
     localStorage.setItem("token", token)
   }
+
+  //  checks if the user is loged in used for authGuards
   loggedIn(){
     return !!localStorage.getItem('token')
   }
