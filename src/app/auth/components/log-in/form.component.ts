@@ -1,7 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-
+import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service'
 
 @Component({
   selector: 'app-form',
@@ -11,8 +12,10 @@ import { AuthService } from 'src/app/services/auth.service';
 export class FormComponent implements OnInit {
 
   constructor(
+    private router:Router,
     private formBuilder:FormBuilder,
-    private authService : AuthService
+    private auth:Auth,
+    private authService:AuthService
     ){}
 
       logInForm = this.formBuilder.group({
@@ -23,8 +26,15 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
   handleLogIn(value:any){
-    console.log(value)
-    // this.authService.SignIn(value.email, value.password)
+      signInWithEmailAndPassword(this.auth, value.email, value.password)
+      .then((response:any)=>{
+        this.router.navigate(['notes']);
+        this.authService.currentUser(response.user.uid)
+        // console.log(response.user)
+      })
+      .catch((error)=>{
+        alert(error)})
+
    }
 
 

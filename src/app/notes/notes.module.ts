@@ -8,7 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { NoteComponent } from './note/note.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GetNotesService } from '../services/get-notes.service'
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/auth-example.service';
 
 
 const routes:Routes =[

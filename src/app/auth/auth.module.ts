@@ -30,7 +30,7 @@ const routes:Routes =[
     RouterModule.forChild(routes),
 
   ],
-  providers: [AuthService],
+  providers: [ AuthService ],
   exports:[  ]
 })
 export class AuthModule { }
