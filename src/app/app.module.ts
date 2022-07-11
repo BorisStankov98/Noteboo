@@ -15,18 +15,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AuthService } from './services/auth.service';
 
 
 
 
 const routes: Routes = [
-  {path:'auth', 
+  {path:'auth',
   loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
 },
-{path:'notes', 
+{path:'notes',
   loadChildren: () => import('./notes/notes.module').then(m => m.NotesModule)
 },
-  
+
 ];
 
 @NgModule({
@@ -38,12 +39,12 @@ const routes: Routes = [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
     MatIconModule,
     MatToolbarModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,AuthService]
 })
 export class AppModule { }

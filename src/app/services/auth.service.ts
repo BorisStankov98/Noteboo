@@ -5,10 +5,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
+
   user:{} | null = null
+
   constructor() {}
-  currentUser(value:{}){
-    this.user=value
+  currentUser(user:{}){
+    this.user=user
     console.log(this.user)
+    return this.user
+  }
+  saveAuthToken(token:string){
+    localStorage.setItem("token", token)
+  }
+  loggedIn(){
+    return !!localStorage.getItem('token')
   }
 }

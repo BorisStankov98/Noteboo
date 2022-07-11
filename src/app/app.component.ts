@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
-import { Firestore } from "@angular/fire/firestore"
+
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,8 @@ import { Firestore } from "@angular/fire/firestore"
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- constructor( 
-  
-  ){
 
- }
-}
+  constructor(){}
+
+    }
+

@@ -24,13 +24,16 @@ export class FormComponent implements OnInit {
     }
     )
   ngOnInit(): void {
+
   }
   handleLogIn(value:any){
       signInWithEmailAndPassword(this.auth, value.email, value.password)
       .then((response:any)=>{
         this.router.navigate(['notes']);
-        this.authService.currentUser(response.user.uid)
+        this.authService.saveAuthToken(response._tokenResponse.idToken)
+        // this.authService.currentUser(response)
         // console.log(response.user)
+
       })
       .catch((error)=>{
         alert(error)})

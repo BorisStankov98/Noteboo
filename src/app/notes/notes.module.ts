@@ -9,16 +9,14 @@ import { NoteComponent } from './note/note.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GetNotesService } from '../services/get-notes.service'
 import { AuthService } from '../services/auth-example.service';
+import { AuthGuard } from '../auth.guard';
 
 
 const routes:Routes =[
-    { path:'',
-    children:[
-      {path:'', component:NotesDashboardComponent},
-      {path:'1', component:NoteComponent }
+      {path:'', component:NotesDashboardComponent,
+    canActivate: [AuthGuard]
+  }
     ]
-    }
-]
 
 @NgModule({
   declarations: [
@@ -34,7 +32,7 @@ const routes:Routes =[
     RouterModule.forChild(routes),
 
   ],
-  providers: [GetNotesService,AuthService],
+  providers: [GetNotesService,AuthService,AuthGuard],
   exports:[]
 })
 export class NotesModule { }
