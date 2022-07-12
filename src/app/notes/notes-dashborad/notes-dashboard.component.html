@@ -1,5 +1,11 @@
 <section class="section-notes">
     <div class="container">
+          <button
+           mat-raised-button
+           (click)="openDialog()"
+           >
+            Add Note
+          </button>
         <div class="notes-content">
             <app-note
                 *ngFor="let note of notes"

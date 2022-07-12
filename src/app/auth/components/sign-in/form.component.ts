@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import { Auth, createUserWithEmailAndPassword } from "@angular/fire/auth"
 import { Router } from '@angular/router';
+import { GetNotesService } from 'src/app/services/get-notes.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-form-signin',
@@ -11,6 +13,8 @@ import { Router } from '@angular/router';
 export class SignInComponent implements OnInit {
 
     constructor(
+     private authService : AuthService,
+      private getNote : GetNotesService,
       private router: Router,
       private auth:Auth,
       private formBuilder:FormBuilder){}
@@ -26,8 +30,9 @@ export class SignInComponent implements OnInit {
   handleRegister(value:any){
     createUserWithEmailAndPassword(this.auth, value.email, value.password)
     .then((response:any)=>{
-      console.log(response.user.uid)
-      // this.router.navigate(['auth/login']);
+      this.authService.currentUser(response.user.uid)
+      this.getNote.initDBinstance()
+      this.router.navigate(['auth/login']);
     })
     .catch((error)=>{
       alert(error)})

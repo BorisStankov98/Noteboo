@@ -10,7 +10,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { GetNotesService } from '../services/get-notes.service'
 import { AuthService } from '../services/auth-example.service';
 import { AuthGuard } from '../auth.guard';
-
+import { AddNoteComponent } from './add-note/add-note.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes:Routes =[
       {path:'', component:NotesDashboardComponent,
@@ -22,13 +25,17 @@ const routes:Routes =[
   declarations: [
     NotesDashboardComponent,
     NotesComponent,
-    NoteComponent
+    NoteComponent,
+    AddNoteComponent,
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
 
   ],

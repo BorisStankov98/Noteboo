@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { GetNotesService } from 'src/app/services/get-notes.service';
+import { AddNoteComponent } from '../add-note/add-note.component';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes-dashboard.component.html',
@@ -9,9 +11,12 @@ export class NotesDashboardComponent implements OnInit {
 
   notes:any
   constructor(
+    public dialog: MatDialog,
     public getNotes:GetNotesService
     ) {
     }
+    animal: string=''
+    name: string=''
 
     ngOnInit(){
     this.getNotes.getData().then((data: {id: string}[]) => {
@@ -19,5 +24,16 @@ export class NotesDashboardComponent implements OnInit {
       console.log(this.notes)
     })
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddNoteComponent, {
+      width: "80%",
+      data: {name: this.name, animal: this.animal},
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 }
+

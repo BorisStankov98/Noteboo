@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Add note</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="noteForm">
+    <mat-form-field appearance="fill">
+      <mat-label >Title</mat-label>
+      <input formControlName="title" matInput placeholder="Title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Text</mat-label>
+      <textarea formControlName="body" matInput type="textarea" placeholder="Text"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button (click)="handleAdd(noteForm.value)" mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Add</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
