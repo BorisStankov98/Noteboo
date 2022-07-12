@@ -6,11 +6,6 @@ import {
   Firestore,
   QueryDocumentSnapshot,
   doc,
-  query,
-  where,
-  getDoc,
-  DocumentReference,
-  DocumentData,
   setDoc,
 } from '@angular/fire/firestore';
 
@@ -35,6 +30,10 @@ export class GetNotesService {
     return user_id;
   }
 
+  getNoteId(noteId:string){
+    return noteId
+  }
+
   /**
    * Creates a query with the user UID to fetch the correct data
    */
@@ -54,14 +53,15 @@ export class GetNotesService {
     });
   }
 
-  getNote(id: string): Promise<{ id: string }[]> {
+  getNote(noteid: string): Promise<any> {
     return new Promise((resolve) => {
-      const dbInstance = collection(this.firestore, 'Boris.Notes');
+      const dbInstance = collection(this.firestore, this.getUserId());
       getDocs(dbInstance).then((response) => {
         this.note = response.docs.find((item: QueryDocumentSnapshot<any>) => {
-          return item.id === 'eJFrlPkyL8mkhb2ZztVU';
+          return item.id === noteid
         });
         resolve(this.note);
+        //  ._document.data.value.mapValue.fields path to values
       });
     });
   }

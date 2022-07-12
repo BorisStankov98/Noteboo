@@ -25,14 +25,12 @@ export class NotesComponent implements OnInit {
   deleteNote(){
     console.log(this.note?.id)
   }
-
   openDialog(){
-     this.getNotes.getNote(this.note!.id).then((data: {id: string}[]) => {
-      this.noteView=data;
-      console.log(this.noteView)
-    })
-
-    const dialogRef = this.dialog.open(NoteComponent);
+    const dialogRef = this.dialog.open(NoteComponent,{
+      data:{
+        note:this.note
+      }
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
