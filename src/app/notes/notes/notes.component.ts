@@ -24,6 +24,7 @@ export class NotesComponent implements OnInit {
   }
   deleteNote(){
    this.getNotes.deleteNote(this.note!.id)
+   this.getNotes.resetPage()
   }
   editNote(){
     const dialogRef = this.dialog.open(EditNoteComponent,{
@@ -33,6 +34,7 @@ export class NotesComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
+      this.getNotes.resetPage()
       console.log(`Dialog result: ${result}`);
     });
   }

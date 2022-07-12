@@ -22,12 +22,13 @@ export class NotesDashboardComponent implements OnInit {
       this.notes=data;
     })
   }
-  openDialog(): void {
+  addNote(): void {
     const dialogRef = this.dialog.open(AddNoteComponent, {
       width: "80%",
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.getNotes.resetPage()
       console.log('The dialog was closed');
     });
   }

@@ -9,6 +9,7 @@ import {
   setDoc,
   deleteDoc,
 } from '@angular/fire/firestore';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Injectable({
@@ -18,7 +19,21 @@ export class GetNotesService {
   data: any[] = [];
   note: any;
 
-  constructor(public firestore: Firestore) {
+  constructor(
+    public firestore: Firestore,
+    private router :Router,
+    private route : ActivatedRoute,
+    ) {
+  }
+  /**
+   * Resets the page so the UI can update
+   */
+  resetPage(){
+  this.router.routeReuseStrategy.shouldReuseRoute= ()=> false;
+  this.router.onSameUrlNavigation = 'reload';
+  this.router.navigate(['./notes'],{
+    relativeTo:this.route
+  })
   }
 
   /**
