@@ -16,10 +16,6 @@ export class NoteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data)
-    // this.getNotes.getNote(this.note!.id).then((data)=>{
-    //   console.log(data)
-    // })
   }
 
 }

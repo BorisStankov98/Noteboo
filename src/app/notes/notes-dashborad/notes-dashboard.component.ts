@@ -20,6 +20,7 @@ export class NotesDashboardComponent implements OnInit {
     ngOnInit(){
     this.getNotes.getData().then((data: {id: string}[]) => {
       this.notes=data;
+      console.log(this.notes)
     })
   }
   openDialog(): void {

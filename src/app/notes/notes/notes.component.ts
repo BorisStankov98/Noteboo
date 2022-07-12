@@ -27,6 +27,7 @@ export class NotesComponent implements OnInit {
   }
   openDialog(){
     const dialogRef = this.dialog.open(NoteComponent,{
+      width:"80%",
       data:{
         note:this.note
       }
