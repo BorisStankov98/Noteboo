@@ -14,6 +14,8 @@ import { AddNoteComponent } from './add-note/add-note.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditNoteComponent } from './edit-notes/edit-note/edit-note.component';
+
 
 const routes:Routes =[
       {path:'', component:NotesDashboardComponent,
@@ -27,6 +29,7 @@ const routes:Routes =[
     NotesComponent,
     NoteComponent,
     AddNoteComponent,
+    EditNoteComponent
   ],
   imports: [
     CommonModule,

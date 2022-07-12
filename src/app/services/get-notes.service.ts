@@ -86,7 +86,10 @@ export class GetNotesService {
       body:body
     })
   }
-
+    /**
+     *
+     * Deletes a document form the DB based on the document passed
+     */
   deleteNote(document:string){
     const dbInstance = collection(this.firestore, this.getUserId());
     deleteDoc(doc(dbInstance,document))
