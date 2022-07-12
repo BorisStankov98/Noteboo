@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Params } from '@angular/router';
 import { GetNotesService } from 'src/app/services/get-notes.service';
 import { Notes } from '../../modules/notes-interface'
 import { NoteComponent } from '../note/note.component';
@@ -23,7 +22,7 @@ export class NotesComponent implements OnInit {
 
   }
   deleteNote(){
-    console.log(this.note?.id)
+   this.getNotes.deleteNote(this.note!.id)
   }
   openDialog(){
     const dialogRef = this.dialog.open(NoteComponent,{

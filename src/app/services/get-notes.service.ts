@@ -7,6 +7,7 @@ import {
   QueryDocumentSnapshot,
   doc,
   setDoc,
+  deleteDoc,
 } from '@angular/fire/firestore';
 
 
@@ -85,4 +86,10 @@ export class GetNotesService {
       body:body
     })
   }
+
+  deleteNote(document:string){
+    const dbInstance = collection(this.firestore, this.getUserId());
+    deleteDoc(doc(dbInstance,document))
+
+}
 }
