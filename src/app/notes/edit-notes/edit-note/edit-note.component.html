@@ -9,11 +9,11 @@
 
     <mat-form-field appearance="fill">
       <mat-label>text</mat-label>
-      <textarea formControlName="body" matInput  placeholder="text"></textarea>
+      <textarea formControlName="body" matInput placeholder="text"></textarea>
     </mat-form-field>
   </form>
-
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+  <button mat-raised-button (click)="handleChange(editForm.value)" color="primary" mat-dialog-close>Edit</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
 </mat-dialog-actions>

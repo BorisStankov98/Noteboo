@@ -62,7 +62,6 @@ export class GetNotesService {
           return item.id === noteid
         });
         resolve(this.note);
-        //  ._document.data.value.mapValue.fields path to values
       });
     });
   }
@@ -93,6 +92,14 @@ export class GetNotesService {
   deleteNote(document:string){
     const dbInstance = collection(this.firestore, this.getUserId());
     deleteDoc(doc(dbInstance,document))
-
 }
+  editNote(note:{title:string,body:string},id:string){
+    const dbInstance = collection(this.firestore, this.getUserId());
+    setDoc(doc(dbInstance,id),
+    {
+      title:note.title,
+      body:note.body
+    }
+    )
+  }
 }
