@@ -31,8 +31,8 @@ export class FormComponent implements OnInit {
       .then((response:any)=>{
         this.authService.saveAuthToken(response._tokenResponse.idToken)
         this.authService.currentUser(response.user.uid)
+        this.authService.saveUserEmail(response.user.email)
         this.router.navigate(['notes']);
-        // console.log(response.user)
 
       })
       .catch((error)=>{

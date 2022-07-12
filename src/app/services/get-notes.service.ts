@@ -26,7 +26,7 @@ export class GetNotesService {
     ) {
   }
   /**
-   * Resets the page so the UI can update
+   * Resets the component so the UI can update
    */
   resetPage(){
   this.router.routeReuseStrategy.shouldReuseRoute= ()=> false;

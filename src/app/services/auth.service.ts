@@ -14,10 +14,17 @@ export class AuthService {
   }
 
   /**
-   * saves the auth token
+   * Saves the auth token
    */
   saveAuthToken(token: string) {
     localStorage.setItem('token', token);
+  }
+
+  /**
+   * Saves the users Email
+   */
+  saveUserEmail(userEmail:string){
+    localStorage.setItem('email', userEmail)
   }
 
   /**
