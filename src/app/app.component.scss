@@ -16,4 +16,13 @@
     margin-left:30px ;
     margin-bottom: 0px !important;
   }
+  .logo{
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    li{
+      display: flex;
+      align-items: center;
+    }
+  }
 }
