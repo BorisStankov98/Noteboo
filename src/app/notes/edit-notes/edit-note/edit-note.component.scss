@@ -1,0 +1,9 @@
+.edit-note-form{
+  form{display: flex;
+  flex-direction: column;
+
+  textarea{
+    height: 300px;
+  }
+  }
+}

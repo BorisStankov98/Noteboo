@@ -34,7 +34,6 @@ export class NotesComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getNotes.resetPage()
       console.log(`Dialog result: ${result}`);
     });
   }

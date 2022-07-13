@@ -1,10 +1,10 @@
 <section class="section-notes">
     <div class="container">
-          <button
-           mat-raised-button
-           (click)="addNote()"
-           >
-            Add Note
+          <button (click)="addNote()"
+           mat-fab
+           color="primary"
+           aria-label="Add note button">
+            <mat-icon>add</mat-icon>
           </button>
         <div class="notes-content">
             <app-note

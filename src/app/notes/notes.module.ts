@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditNoteComponent } from './edit-notes/edit-note/edit-note.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const routes:Routes =[
@@ -39,6 +40,7 @@ const routes:Routes =[
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatIconModule,
     RouterModule.forChild(routes),
 
   ],

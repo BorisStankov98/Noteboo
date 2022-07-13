@@ -45,11 +45,6 @@ export class GetNotesService {
 
     return user_id;
   }
-
-  getNoteId(noteId:string){
-    return noteId
-  }
-
   /**
    * Creates a query with the user UID to fetch the correct data
    */

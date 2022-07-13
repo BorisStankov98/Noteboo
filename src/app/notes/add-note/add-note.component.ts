@@ -23,6 +23,7 @@ export class AddNoteComponent implements OnInit {
   }
   handleAdd(value:any){
     this.addNote.createNote(value.title, value.body)
+    this.addNote.resetPage()
   }
 
 }

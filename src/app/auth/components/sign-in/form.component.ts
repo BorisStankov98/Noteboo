@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignInComponent implements OnInit {
 
     constructor(
-     private authService : AuthService,
+      private authService : AuthService,
       private getNote : GetNotesService,
       private router: Router,
       private auth:Auth,

@@ -25,5 +25,6 @@ export class EditNoteComponent implements OnInit {
   }
   handleChange(formValue:any){
     this.changeNote.editNote(formValue,this.data.note.id)
+    this.changeNote.resetPage()
   }
 }

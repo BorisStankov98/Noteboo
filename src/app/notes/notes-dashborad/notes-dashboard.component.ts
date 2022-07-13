@@ -28,7 +28,6 @@ export class NotesDashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getNotes.resetPage()
       console.log('The dialog was closed');
     });
   }
