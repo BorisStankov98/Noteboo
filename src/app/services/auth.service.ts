@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   constructor() {}
-
+  isLoggedIn=this.loggedIn()
   /**
    * Saves the data of the current user
    */

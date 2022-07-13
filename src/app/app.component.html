@@ -2,14 +2,14 @@
 <mat-toolbar color="primary">
   <mat-icon>assignment_ind</mat-icon>
   <span>Noteboo</span>
-  <span class="example-spacer"></span>
+  <span class="spacer"></span>
   <nav>
-  <a routerLink="/auth/login">Login</a>
-  <a routerLink="/auth/signin">Signin</a>
-  <a routerLink="/notes/">Notes</a>
-  <a (click)="signOut()" routerLink="/auth/login">Sign Out</a>
+  <a *ngIf="!isLoggedIn" routerLink="/auth/login">Login</a>
+  <a *ngIf="!isLoggedIn" routerLink="/auth/signin">Signin</a>
+  <a *ngIf="isLoggedIn" routerLink="/notes/">Notes</a>
+  <a *ngIf="isLoggedIn" (click)="signOut()" routerLink="/auth/login">Sign Out</a>
 </nav>
-  <p>{{userEmail}}</p>
+  <p>{{userEmail || "User Name"}} </p>
 </mat-toolbar>
 
 

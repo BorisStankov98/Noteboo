@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from 'src/app/services/auth.service';
 import { GetNotesService } from 'src/app/services/get-notes.service';
 import { AddNoteComponent } from '../add-note/add-note.component';
 @Component({
@@ -12,11 +13,10 @@ export class NotesDashboardComponent implements OnInit {
   notes:any
   constructor(
     public dialog: MatDialog,
-    public getNotes:GetNotesService
+    public getNotes:GetNotesService,
+    private auth: AuthService
     ) {
     }
-
-
     ngOnInit(){
     this.getNotes.getData().then((data: {id: string}[]) => {
       this.notes=data;

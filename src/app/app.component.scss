@@ -1,20 +1,19 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-  nav a{
-    text-decoration: none;
-    margin-left: 10px;
-  }
-  nav a:visited{
-    color: inherit;
-  }
-p{
-  margin-left:10px ;
-}
 
 .app{
   height: 100vh;
-  // background-color:#aab1e5
-  // background-color: rgb(223, 223, 223);
   background-color: #f7f7f7;
+  .spacer {
+      flex: 1 1 auto;
+    }
+    nav a{
+      text-decoration: none;
+      margin-left: 10px;
+    }
+    nav a:visited{
+      color: inherit;
+    }
+  p{
+    margin-left:30px ;
+    margin-bottom: 0px !important;
+  }
 }
