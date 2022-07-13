@@ -29,11 +29,13 @@ export class GetNotesService {
    * Resets the component so the UI can update
    */
   resetPage(){
-  this.router.routeReuseStrategy.shouldReuseRoute= ()=> false;
-  this.router.onSameUrlNavigation = 'reload';
-  this.router.navigate(['./notes'],{
-    relativeTo:this.route
-  })
+    setTimeout(() => {
+      this.router.routeReuseStrategy.shouldReuseRoute= ()=> false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate(['./notes'],{
+        relativeTo:this.route
+      })
+    }, 200)
   }
 
   /**
