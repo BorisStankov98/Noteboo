@@ -18,10 +18,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home-component/home-component.component';
 
-
-
-
-
 const routes: Routes = [
   {path:'', component:HomeComponent },
   {path:'auth',

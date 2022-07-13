@@ -66,17 +66,6 @@ export class GetNotesService {
     });
   }
 
-  getNote(noteid: string): Promise<any> {
-    return new Promise((resolve) => {
-      const dbInstance = collection(this.firestore, this.getUserId());
-      getDocs(dbInstance).then((response) => {
-        this.note = response.docs.find((item: QueryDocumentSnapshot<any>) => {
-          return item.id === noteid
-        });
-        resolve(this.note);
-      });
-    });
-  }
 /**
  * Initialises a db instance based on the users UID
  */

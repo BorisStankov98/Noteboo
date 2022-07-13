@@ -33,7 +33,6 @@ export class FormComponent implements OnInit {
         this.authService.currentUser(response.user.uid)
         this.authService.saveUserEmail(response.user.email)
         this.router.navigate(['notes']);
-
       })
       .catch((error)=>{
         alert(error)})

@@ -11,7 +11,7 @@
   <a *ngIf="isLoggedIn" routerLink="/notes/">Notes</a>
   <a *ngIf="isLoggedIn" (click)="signOut()" routerLink="/auth/login">Sign Out</a>
 </nav>
-  <p>{{userEmail || "User Name"}} </p>
+  <p>{{userEmail || ""}} </p>
 </mat-toolbar>
 
 
