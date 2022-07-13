@@ -20,15 +20,12 @@ export class NotesDashboardComponent implements OnInit {
     ngOnInit(){
     this.getNotes.getData().then((data: {id: string}[]) => {
       this.notes=data;
+      console.log(data)
     })
   }
   addNote(): void {
     const dialogRef = this.dialog.open(AddNoteComponent, {
       width: "80%",
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 }

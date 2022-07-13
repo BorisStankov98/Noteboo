@@ -1,11 +1,12 @@
 <section class="section-notes">
+  <button (click)="addNote()"
+   mat-fab
+   color="primary"
+   aria-label="Add note button"
+   class="add-note">
+    <mat-icon>add</mat-icon>
+  </button>
     <div class="container">
-          <button (click)="addNote()"
-           mat-fab
-           color="primary"
-           aria-label="Add note button">
-            <mat-icon>add</mat-icon>
-          </button>
         <div class="notes-content">
             <app-note
                 *ngFor="let note of notes"

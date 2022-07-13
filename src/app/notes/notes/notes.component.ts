@@ -44,8 +44,5 @@ export class NotesComponent implements OnInit {
         note:this.note
       }
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 }
